@@ -1,0 +1,37 @@
+<div class="jumbotron py-3">
+    <h1 class="display-4 text-center">Payment Details Register</h1>
+</div>
+
+<div class="row">
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-header"><h3>Enter Details</h3></div>
+            <div class="card-body">
+                <app-payment-details-form>
+                </app-payment-details-form>
+            </div>
+        </div>
+       
+    </div>
+    <div class="col-sm-6">
+        <div class="card-header"><h3>Payment Details list</h3></div>
+        <div class="card-body">
+            <table class="table">
+                <thead class="thead-light">
+                    <th>Card owner</th>
+                    <th>card number</th>
+                    <th>Exp. Date</th>
+                    <th></th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let pd of service.list">
+                        <td (click)="populateForm(pd)">{{pd.cardOwnerName}}</td>
+                        <td (click)="populateForm(pd)">{{pd.cardNumber}}</td>
+                        <td (click)="populateForm(pd)">{{pd.expirationDate}}</td>
+                        <td><i class="far da-trach-alt fa lg text-danger"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
