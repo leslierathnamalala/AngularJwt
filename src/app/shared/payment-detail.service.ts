@@ -22,4 +22,6 @@ export class PaymentDetailService {
     .toPromise()
     .then(res => this.list = res as PaymentDetail[]);
   }
+
+  //Test
 }
